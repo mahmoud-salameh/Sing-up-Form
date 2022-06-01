@@ -1,0 +1,147 @@
+body {
+  font-family: "Rubik", sans-serif;
+  background-image: url(https://www.burlingtonvt.gov/sites/default/files/pexels-photo-3182750.jpeg);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.container {
+  display: flex;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > h3 {
+  position: relative;
+  left: 653px;
+  width: 184%;
+  bottom: -37px;
+}
+.animation {
+  position: relative;
+  left: 910px;
+  bottom: 8px;
+}
+
+#name {
+  position: relative;
+  left: 650px;
+  width: 90%;
+  top: 31px;
+  height: 40px;
+}
+#Lastname {
+  position: relative;
+  left: 1100px;
+  width: 90%;
+  bottom: 9px;
+  height: 40px;
+}
+
+#Address {
+  position: relative;
+  left: 650px;
+  width: 187%;
+  top: 20px;
+  height: 40px;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: 700;
+  position: relative;
+  left: 850px;
+  bottom: 15px;
+}
+
+input[type="radio"] {
+  margin: 4px 2px 2px;
+  margin-top: 1px\9;
+  line-height: normal;
+  position: relative;
+  left: 896px;
+  top: 2px;
+  width: 10px;
+  margin-top: 10px;
+}
+
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  left: 650px;
+  width: 92%;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+}
+
+#output {
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  left: 438px;
+  bottom: 40px;
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.link {
+  position: relative;
+  left: 706px;
+  top: 72px;
+  width: 187%;
+  height: 40px;
+  background-color: rgb(211, 214, 52);
+  color: #fbfbfb;
+}
+
+#pincode {
+  position: relative;
+  left: 650px;
+  bottom: 15px;
+  width: 187%;
+  height: 40px;
+}
+
+#Course {
+  position: relative;
+  left: 650px;
+  top: 20px;
+  width: 187%;
+  height: 40px;
+}
+
+#email {
+  position: relative;
+  left: 650px;
+  top: 50px;
+  width: 187%;
+  height: 40px;
+}
+
+#a6 {
+  position: relative;
+  left: 1098px;
+  top: 69px;
+  width: 200px;
+  height: 43px;
+  background-color: #e3e30cd6;
+}
+
+#cancelbtn {
+  position: relative;
+
+  left: 800px;
+  top: 69px;
+
+  height: 43px;
+  background-color: rgb(255, 255, 255);
+  width: 180px;
+}

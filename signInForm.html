@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h2 class="animation">STUDENT REGISTRATION FORM</h2>
+        <div class="form">
+          <div class="form-group"></div>
+
+          <input type="text" placeholder="Pincode" id="pincode" required />
+
+          <input type="email" placeholder="email ID" id="email" required />
+          <div id="button">
+            <button id="cancelbtn">RESET ALL</button>
+            <button onclick="saveData()" type="button" id="a6">
+              SUBMIT FORM
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let name = localStorage.getItem("name") ? localStorage.getItem("name") : "";
+    console.log(name);
+    if (name != "") {
+      alert("LogIn Pass");
+    }
+    function saveData() {
+      let email, pincode;
+      email = document.getElementById("email").value;
+
+      pincode = document.getElementById("pincode").value;
+
+      let user_records = new Array();
+      user_records = JSON.parse(localStorage.getItem("users"))
+        ? JSON.parse(localStorage.getItem("users"))
+        : [];
+      if (
+        user_records.some((v) => {
+          return v.email == email && v.pincode == pincode;
+        })
+      ) {
+        alert("Login Pass");
+        let current_user = user_records.filter((v) => {
+          return v.email == email && v.pincode == pincode;
+        })[0];
+        localStorage.setItem("name", current_user.name);
+        localStorage.setItem("email", current_user.email);
+      } else {
+        alert("Login Fail");
+      }
+    }
+  </script>
+</html>

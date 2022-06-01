@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+
+            <h2 class="animation">STUDENT REGISTRATION FORM</h2>
+
+
+            <div class="form" onclick="document.getElementById('myInput').value = ''">
+                <input type="firstname" placeholder="Firstname" id="name" required>
+                <input type="lastname" placeholder="Lastname" id="Lastname" required>
+                <input type="address" placeholder="Address" id="Address" required>
+
+
+
+                <h3>Gender:</h3>
+                <input type="radio" id="Femal" value="Femal">
+                <label for="Femal">Femal</label>
+                <input type="radio" id="Male" value="Male">
+                <label for="Male">Male</label>
+                <input type="radio" id="Other" value="Other">
+                <label for="Other">Other</label>
+
+                <select name="country" id="input" onchange="random()">
+                    <option>Jordan</option>
+                    <option>Saudi Arabia</option>
+                    <option>Turkey</option>
+                </select>
+
+
+                <div id="output">
+                    <select>
+                        <option></option>
+                    </select>
+
+                </div>
+
+
+                <input type="text" placeholder="Pincode" id="pincode" required>
+
+
+                <input type="Course" placeholder="Course" id="Course" required>
+
+                <input type="email" placeholder="email ID" id="email" required>
+                <div id="button">
+
+                    <button id="cancelbtn">RESET ALL</button>
+                    <button onclick="saveData()" type="button" id="a6">SUBMIT FORM</button>
+
+                    <a type="text" class="link" href="/signInForm.html">Sign In</a>
+
+
+                    <div class="header"></div>
+                </div>
+            </div>
+
+</body>
+<script>
+    function saveData() {
+        let email, pincode;
+        email = document.getElementById("email").value;
+
+        pincode = document.getElementById("pincode").value;
+
+        let user_records = new Array();
+        user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+        if (user_records.some((v) => { return v.email == email })) {
+            alert("duplicate data");
+        }
+        else {
+            user_records.push({
+                "email": email,
+                "pincode": pincode
+            })
+            localStorage.setItem("users", JSON.stringify(user_records));
+        }
+
+    }
+</script>
+
+</html>
+
+<script src="javascript.js"></script>
